@@ -19,7 +19,6 @@ const validateJsonWebToken = async ({header, payload, signature}, secret) => awa
 );
 const app = express();
 require('dotenv').config();
-require('buffer.base64url');
 app.use(express.json());
 app.get('/zilbesveldoswinkos/jwt/:header.:payload.:signature', async (req, res) =>
     (valid => res.contentType('application/json')
