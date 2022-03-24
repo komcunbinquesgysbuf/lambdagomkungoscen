@@ -2,6 +2,9 @@
   "name": "lambdagomkungoscen",
   "license": "ISC",
   "main": "index.js",
+  "engines": {
+    "node": ">=17"
+  },
   "scripts": {
     "start": "node index.js"
   },
