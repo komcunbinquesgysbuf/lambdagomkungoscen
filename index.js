@@ -1,8 +1,5 @@
-import express from "express";
-import {webcrypto as crypto} from "crypto";
-import {config} from "dotenv";
-import 'buffer.base64url';
-
+const express = require('express');
+const crypto = require('crypto').webcrypto;
 const createJsonWebToken = async (payload, secret) => await (
     async (stringToSign, key) => [
         stringToSign,
@@ -21,7 +18,8 @@ const validateJsonWebToken = async ({header, payload, signature}, secret) => awa
     Buffer.from(`${header}.${payload}`, 'binary')
 );
 const app = express();
-config();
+require('dotenv').config();
+require('buffer.base64url');
 app.use(express.json());
 app.get('/zilbesveldoswinkos/jwt/:header.:payload.:signature', async (req, res) =>
     (valid => res.contentType('application/json')
