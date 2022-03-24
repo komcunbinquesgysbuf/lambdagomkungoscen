@@ -6,6 +6,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "buffer.base64url": "^0.0.2",
     "dotenv": "^16.0.0",
     "express": "^4.17.3"
   }
